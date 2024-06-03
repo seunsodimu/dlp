@@ -8,7 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
 $routes->post('/login', 'UserController::login'); 
-$routes->get('/dashboard', 'Home::index');
+$routes->get('/dashboard', 'Home::dashboard', ['filter' => 'auth']);
 $routes->get('/logout', 'UserController::logout');
 $routes->post('/form-quote', 'ShippingController::getFDXRate', ['filter' => 'auth']);
 $routes->get('/service-detail/(:any)', 'ShippingController::serviceDetail/$1', ['filter' => 'auth']);

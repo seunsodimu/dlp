@@ -14,24 +14,30 @@ class Home extends BaseController
     }
     public function index()
     {
+        if (session()->get('isLoggedIn')) {
+            return redirect()->to('dashboard');
+        }else{
+            return view('login');
+        }
+    }
+
+    public function login()
+    {
+        // if (session()->get('isLoggedIn')) {
+        //     return redirect()->to('dashboard');
+        // }else{
+        //     return view('login');
+        // }
+    }
+
+    public function dashboard()
+    {
         $services = new ServiceModel();
         $data['services'] = $services->getAllServices();
         $data['packagetypes'] = $services->getPackageTypes();
         $data['dropofftypes'] = $services->getDropOffTypes();
         // var_dump($data['services']); exit;
         return view('home', $data);
-    }
-
-    public function login()
-    {
-        $data = [];
-        return view('login');
-    }
-
-    public function dashboard()
-    {
-        $data = []; 
-        return view('reports');
     }
 
     public function logout()

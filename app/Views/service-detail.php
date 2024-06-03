@@ -8,6 +8,11 @@
                         <div class="container relative mt-6">
                             <div class="md:flex justify-center">
                                 <div class="lg:w-4/5 w-full">
+                                <?php if($service=='No data found'): ?>
+                                            <div class="p-6 text-center">
+                                                <h6 class="text-lg font-semibold">Your request has timed out, <a href="<?= base_url() ?>">please request a new rate</a>.</h6>
+                                            </div>
+                                        <?php else: ?>
                                     <div class="p-6 rounded-md shadow dark:shadow-gray-700 bg-white dark:bg-slate-900">
                                         <div class="border-b border-gray-100 dark:border-gray-700 pb-6">
                                             <div class="md:flex justify-between">
@@ -58,7 +63,8 @@
                                         </div>
                                         
                                         <div class="relative overflow-x-auto shadow dark:shadow-gray-700 rounded-md mt-6">
-                                            <table class="w-full text-start text-slate-500 dark:text-slate-400">
+                                       
+                                        <table class="w-full text-start text-slate-500 dark:text-slate-400">
                                                 <thead class="text-sm uppercase bg-slate-50 dark:bg-slate-800">
                                                     <tr>
                                                         <th scope="col" class="text-start px-6 py-3">
@@ -132,6 +138,7 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                        
                                         </div>
             
                                         <!-- <div class="w-56 ms-auto p-5">
@@ -167,6 +174,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
                                 </div>
                             </div><!--end grid-->
                         </div><!--end container-->
