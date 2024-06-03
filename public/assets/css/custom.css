@@ -1,0 +1,96 @@
+.toggleContainer {
+   position: relative;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   width: fit-content;
+   border: 3px solid #343434;
+   border-radius: 20px;
+   background: #343434;
+   font-weight: bold;
+   color: #343434;
+   cursor: pointer;
+ }
+ .toggleContainer::before {
+   content: '';
+   position: absolute;
+   width: 50%;
+   height: 100%;
+   left: 0%;
+   border-radius:20px;
+   background: white;
+   transition: all 0.3s;
+ }
+ .toggleCheckbox:checked + .toggleContainer::before {
+    left: 50%;
+ }
+ .toggleContainer div {
+   padding: 6px;
+   text-align: center;
+   z-index: 1;
+ }
+ .toggleCheckbox {
+   display: none;
+ }
+ .toggleCheckbox:checked + .toggleContainer div:first-child{
+   color: white;
+   transition: color 0.3s;
+ }
+ .toggleCheckbox:checked + .toggleContainer div:last-child{
+   color: #343434;
+   transition: color 0.3s;
+ }
+ .toggleCheckbox + .toggleContainer div:first-child{
+   color: #343434;
+   transition: color 0.3s;
+ }
+ .toggleCheckbox + .toggleContainer div:last-child{
+   color: white;
+   transition: color 0.3s;
+ }
+
+ .InputAddOn {
+    display: flex;
+    margin-bottom: 1.5em;
+  }
+  
+  .InputAddOn-field {
+    flex: 1;
+  }
+  .InputAddOn-field:not(:first-child) {
+    border-left: 0;
+  }
+  .InputAddOn-field:not(:last-child) {
+    border-right: 0;
+  }
+  
+  .InputAddOn-item {
+    background-color: rgba(147, 128, 108, 0.1);
+    color: #666666;
+    font: inherit;
+    font-weight: normal;
+  }
+  
+  .InputAddOn-field,
+  .InputAddOn-item {
+    border: 1px solid rgba(147, 128, 108, 0.25);
+    padding: 0.5em 0.75em;
+  }
+  .InputAddOn-field:first-child,
+  .InputAddOn-item:first-child {
+    border-radius: 2px 0 0 2px;
+  }
+  .InputAddOn-field:last-child,
+  .InputAddOn-item:last-child {
+    border-radius: 0 2px 2px 0;
+  }
+  .bordericon ::after{
+    content: '<i class="mdi mdi-star-box"></i>';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border: 2px solid #343434;
+    border-radius: 20px;
+    transition: all 0.3s;
+  }
